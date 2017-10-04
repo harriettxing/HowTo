@@ -1,0 +1,51 @@
+pushd //servername/shared/git/appname
+git init --bare
+popd
+
+cd /c/Users/harriett.xing-adm/Documents/git/appname
+git init
+git remote add origin //servername/shared/git/appname
+
+git add -A 
+git commit
+
+git push origin masteriinit
+git ls-tree --full-tree -r HEAD
+show 
+git ls-remote 
+ls -d */
+
+git remote show origin
+git diff filename.php
+
+git add -A  
+
+wswp-glc-uea10.glc-md.com
+
+$ git remote -v
+origin  //servername/shared/git/appname (fetch)
+origin  //servername/shared/git/appname (push)
+
+git log --all --grep=<pattern>
+
+git log --all --grep='appname-341'
+
+git diff-tree --no-commit-id --name-only -r 4a09f2b92a9d1fd40443fbb721ae0c663cd70f63
+
+git diff-tree --no-commit-id --name-only -r bd61ad98
+
+git show a303aa90779efdd2f6b9d90693e2cbbbe4613c1d
+
+
+git remote rm origin
+
+git remote add origin /c/shared/git/appname
+
+git reset (move all staged file to unstaged changed status)
+
+git checkout .
+
+git show --pretty="" --name-only 2f17906ff92c7f92b9a38c9e5e4e44d274c3ea90
+
+git ls-files --deleted -z | xargs -0 git rm
+git reset -- filename.ext

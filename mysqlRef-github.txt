@@ -1,0 +1,40 @@
+create database dbname;
+
+mysqldump -u root -pMyPassword --skip-triggers --routines dbname > C:\Users\harriett.xing\Documents\dbname.sql
+mysqldump -u root -pMyPassword --skip-triggers --routines dbname > dbname.sql
+
+mysqldump -u root -pMyPassword -P3306 -h100.30.6.4 --skip-triggers --routines dbname > dbname.sql
+
+mysql -u root -p  dbname < dbname.sql
+mysql -u root -pMyPassword  dbname < dbname.sql
+mysql -u root -pMyPassword  dbname < dbname.sql
+
+select user, host, password from mysql.user;
+
+grant all privileges on test.* to 'root'@'webadmin.test.com' identified by 'mypassword';
+
+GRANT ALL PRIVILEGESmysql
+ON dbname.*
+TO 'root'@'servername'
+IDENTIFIED BY 'password';
+
+GRANT SELECT ON mysql.* to 'root'@'servername';
+
+mysqld --inimysqltfile=C:\\Users\harriett.xing\Documents\mysql-init.txt
+
+"C:\Program Files\MySQL\MySQL Server 5.7\bin\mysqld.exe" --defaults-file="C:\ProgramData\MySQL\MySQL Server 5.7\my.ini" --initfile=C:\\Users\harriett.xing-adm\Documents\mysql-init.txt MySQL57 
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass';
+
+create table t1 (i int) engine=innodb;
+alter table t1 encryption='Y';
+
+SELECT @@default_storage_engine;
+
+show variables like '%autocommit%';
+
+FLUSH TABLES WITH READ LOCK;
+SET GLOBAL read_only = 1;
+
+SET GLOBAL read_only = 0;
+UNLOCK TABLES;

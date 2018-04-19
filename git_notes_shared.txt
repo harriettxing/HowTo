@@ -49,3 +49,5 @@ git show --pretty="" --name-only 2f17906ff92c7f92b9a38c9e5e4e44d274c3ea90
 
 git ls-files --deleted -z | xargs -0 git rm
 git reset -- filename.ext
+
+git log --name-status HEAD^..HEAD

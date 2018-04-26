@@ -1,0 +1,2 @@
+# list all file names in a directory and subdirectories minus the names of any directories
+dir /s /b /a-d > z.out.lst 

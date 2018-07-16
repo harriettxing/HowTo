@@ -1,0 +1,37 @@
+Internet Explorer:
+- click on setting on upper right
+- go to "internet options"
+- select "security" tab
+- click on "Trusted Sites"
+- click on "Sites"
+- add "https://www.glc-md.com" to the list of websites.
+- Close
+- Click on "custom level"
+- Scroll to bottom till you see "User Authentication"
+- Select "Automatic logon with current user name and password"
+- restart IE
+
+Google Chrome:
+- click on menu on the upper right corner
+- go to "Settings"
+- open "advanced"
+- click on "Open Proxy Settings"
+- select "security" tab
+- click on "Trusted Sites"
+- click on "Sites"
+- add "https://www.glc-md.com" to the list of websites.
+- Close
+- Click on "custom level"
+- Scroll to bottom till you see "User Authentication"
+- Select "Automatic logon with current user name and password"
+- restart Chrome
+
+Mozilla Firefox:
+- start Firefox
+- open a new tab
+- type in "about:config" in the address bar
+- scroll down the list of parameters till you find "network.automatic-ntlm-auth.trusted-uris"
+- right click on "network.automatic-ntlm-auth.trusted-uris" and select "Modify"
+- at the popup "Enter string value", enter "https://www.glc-md.com"
+- click "OK"
+- restart Firefox

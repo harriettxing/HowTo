@@ -1,0 +1,10 @@
+In php.ini, I enabled the following:
+
+extension=php_mysql.dll
+extension=php_mysqli.dll
+# extension=php_oci8_12c.dll
+extension=php_pdo_mysql.dll
+# extension=php_pdo_oci.dll
+
+Use absolute path for extension_dir
+Changing from extension_dir="ext" to extension_dir="c:/phpinstall_path/ext"

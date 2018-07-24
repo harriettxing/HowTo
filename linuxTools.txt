@@ -1,0 +1,109 @@
+diff -r dir1 dir2 > out.txt
+
+sudo apt install virtualbox-guest-x11
+sudo apt install virtualbox-guest-x11-hwe
+VBoxClient --clipboard
+
+gunzip --keep httpd-2.4.33.tar.gz
+tar -C apache -zxvf httpd-2.4.33.tar.gz
+
+To install apach httpd server:
+	sudo apt-get update
+	sudo apt install net-tools
+	sudo apt-get install apache2
+	sudo apache2ctl configtest
+	netstat -an | more
+	sudo /etc/init.d/apache2 stop
+	sudo /etc/init.d/apache2 start
+	sudo /etc/init.d/apache2 restart
+	sudo systemctl restart apache2
+
+sudo nano index.html
+for Ubuntu 18.04 LTS
+sudo vi /etc/apache2/sites-available/000-default.conf
+
+To install mysql:
+	sudo apt update
+	sudo apt install mysql-server
+	sudo mysql_secure_installation
+	sudo mysql
+	mysql> SELECT user,authentication_string,plugin,host FROM mysql.user;
+	mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+	mysql> FLUSH PRIVILEGES;
+	mysql> SELECT user,authentication_string,plugin,host FROM mysql.user;
+	mysql> exit
+	mysql -u root -p
+	
+
+To remove mysql:
+	sudo apt-get purge mysql-apt-config
+	sudo apt-get remove mysql-apt-config
+	sudo apt-get remove --purge mysql*
+	sudo apt-get purge mysql*
+	sudo apt-get autoremove
+	sudo apt-get autoclean
+	sudo apt-get remove dbconfig-mysql
+	sudo apt-get dist-upgrade
+
+Or
+	sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-* mysql-client-core-*
+	sudo rm -rf /etc/mysql /var/lib/mysql
+	sudo apt-get autoremove
+	sudo apt-get autoclean
+	
+To reset root password:
+	sudo /etc/init.d/mysql stop
+	sudo mkdir /var/run/mysqld
+	sudo chown mysql:mysql /var/run/mysqld
+	sudo mysqld_safe --skip-grant-tables &
+	mysql -uroot
+	use mysql;
+	update user set authentication_string=PASSWORD("Krunch-Moad-34") where User='root';
+	flush privileges;
+	quit;
+	sudo /etc/init.d/mysql stop
+	sudo /etc/init.d/mysql start
+	mysql -u root -p
+	
+To install php 7.1:
+	sudo apt-get install software-properties-common
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt update
+	sudo apt-get install php7.1 libapache2-mod-php7.1 php7.1-mcrypt php7.1-cli php7.1-xml php7.1-zip php7.1-mysql php7.1-gd php7.1-imagick php7.1-recode php7.1-tidy php7.1-xmlrpc
+	sudo nano /etc/php/7.1/apache2/php.ini
+		file_uploads = On
+		allow_url_fopen = On
+		memory_limit = 256M
+		upload_max_filesize = 100M
+		max_execution_time = 360
+		date.timezone = America/Chicago
+	lookup Apache2 dir.conf
+		<IfModule mod_dir.c>
+		     DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+		</IfModule>
+	sudo systemctl restart apache2.service
+	sudo nano /var/www/html/phpinfo.php
+	
+To install git:
+	sudo apt -y install git
+	git --version
+	sudo apt -y install make libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+	navigate to https://github.com/git/git/tree/master
+	Click on "Branch:Master" -> tags -> the latest none rc version
+	-> Clone or download -> Download Zip -> Copy link address
+	wget https://github.com/git/git/archive/v2.18.0.zip
+	unzip v2.18.0.zip
+	cd git-2.18.0
+	make prefix=/usr/local all
+	sudo make prefix=/usr/local install
+	git --version
+	git config --global user.name "Your Name Here"
+	git config --global user.email "youremail@address.here"
+
+To add myself to vboxsf:
+edit /etc/group
+    vboxsf:x:120:harriettxing
+sudo adduser $USER vboxsf
+
+
+

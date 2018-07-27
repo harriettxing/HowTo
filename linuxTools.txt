@@ -21,6 +21,7 @@ To install apach httpd server:
 sudo nano index.html
 for Ubuntu 18.04 LTS
 sudo vi /etc/apache2/sites-available/000-default.conf
+default apache document root:  /var/www/html
 
 To install mysql:
 	sudo apt update
@@ -68,6 +69,7 @@ To reset root password:
 To install php 7.1:
 	sudo apt-get install software-properties-common
 	sudo add-apt-repository ppa:ondrej/php
+ #      sudo add-apt-repository ppa:ondrej/apache2
 	sudo apt update
 	sudo apt-get install php7.1 libapache2-mod-php7.1 php7.1-mcrypt php7.1-cli php7.1-xml php7.1-zip php7.1-mysql php7.1-gd php7.1-imagick php7.1-recode php7.1-tidy php7.1-xmlrpc
 	sudo nano /etc/php/7.1/apache2/php.ini

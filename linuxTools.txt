@@ -52,6 +52,24 @@ Or
 	sudo apt-get autoremove
 	sudo apt-get autoclean
 	
+To enable InnoDB encryption:
+
+        cd /etc/mysql/conf.d
+        sudo vi mysql.conf
+        add:
+		[mysqld]
+		plugin_dir=/usr/lib/mysql/plugin/
+		early-plugin-load=keyring_file.so
+	sudo /etc/init.d/mysql restart                 
+         
+To make table name case insensitive:
+        update /etc/mysql/mysql.cnf
+
+[mysqld]
+lower_case_table_names = 1
+
+sudo /etc/init.d/mysql restart
+
 To reset root password:
 	sudo /etc/init.d/mysql stop
 	sudo mkdir /var/run/mysqld
@@ -86,6 +104,11 @@ To install php 7.1:
 	sudo systemctl restart apache2.service
 	sudo nano /var/www/html/phpinfo.php
 	
+To install python:
+        sudo add-apt-repository ppa:jonathonf/python-3.6
+        sudo apt-get update
+        sudo apt-get install python3.6
+
 To install git:
 	sudo apt -y install git
 	git --version
@@ -106,6 +129,14 @@ To add myself to vboxsf:
 edit /etc/group
     vboxsf:x:120:harriettxing
 sudo adduser $USER vboxsf
+# need restart
 
 
+To add apache to vboxsf:
+sudo usermod -a -G vboxsf www-data
 
+To search for a string in textfiles:
+sudo apt-get install searchmonkey
+
+To copy all contents of a directory to another:
+cp -a /source/. /dest/

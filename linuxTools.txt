@@ -10,6 +10,16 @@ edit /etc/group
 sudo adduser $USER vboxsf
 # need restart
 
+To install NGINX:
+        sudo apt-get update
+        sudo apt-get install nginx
+
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+sudo update-rc.d nginx defaults
+
+
 gunzip --keep httpd-2.4.33.tar.gz
 tar -C apache -zxvf httpd-2.4.33.tar.gz
 
@@ -28,6 +38,9 @@ sudo nano index.html
 for Ubuntu 18.04 LTS
 sudo vi /etc/apache2/sites-available/000-default.conf
 default apache document root:  /var/www/html
+
+To add apache to vboxsf:
+sudo usermod -a -G vboxsf www-data
 
 To install mysql:
 	sudo apt update
@@ -132,9 +145,6 @@ To install git:
 	git config --global user.email "youremail@address.here"
 
 
-To add apache to vboxsf:
-sudo usermod -a -G vboxsf www-data
-
 To search for a string in textfiles:
 sudo apt-get install searchmonkey
 
@@ -143,6 +153,7 @@ cp -a /source/. /dest/
 
 
 Useful commands:
+sudo apt install net-tools
 
 uname -a
 ifconfig
@@ -166,6 +177,9 @@ mount /dev/sda2 /mnt
 mount
 less /etc/fstab
 man <command>
+
+List all directories:
+ls -d */
 
 
 

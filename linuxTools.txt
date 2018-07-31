@@ -4,6 +4,12 @@ sudo apt install virtualbox-guest-x11
 sudo apt install virtualbox-guest-x11-hwe
 VBoxClient --clipboard
 
+To add myself to vboxsf:
+edit /etc/group
+    vboxsf:x:120:harriettxing
+sudo adduser $USER vboxsf
+# need restart
+
 gunzip --keep httpd-2.4.33.tar.gz
 tar -C apache -zxvf httpd-2.4.33.tar.gz
 
@@ -125,12 +131,6 @@ To install git:
 	git config --global user.name "Your Name Here"
 	git config --global user.email "youremail@address.here"
 
-To add myself to vboxsf:
-edit /etc/group
-    vboxsf:x:120:harriettxing
-sudo adduser $USER vboxsf
-# need restart
-
 
 To add apache to vboxsf:
 sudo usermod -a -G vboxsf www-data
@@ -140,3 +140,39 @@ sudo apt-get install searchmonkey
 
 To copy all contents of a directory to another:
 cp -a /source/. /dest/
+
+
+Useful commands:
+
+uname -a
+ifconfig
+ip addr show
+ip addr show  DeviceName
+/dev/sda1           26G  8.0G   16G  34% /
+
+service udev status
+service udev start
+service udev stop
+systemctl status udev
+
+du -sh home
+
+netstat -tulpn
+ps aux | grep udev
+top
+htop ???
+ls /mnt
+mount /dev/sda2 /mnt
+mount
+less /etc/fstab
+man <command>
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,13 @@
+Ubuntu 18.04 LTS install hardware requirements:
+- 2gz dual core processor
+- 2 GB mem
+- 25 GB hard drive
+- DVD/USB
+- internet
+
 diff -r dir1 dir2 > out.txt
+
+sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 
 sudo apt install virtualbox-guest-x11
 sudo apt install virtualbox-guest-x11-hwe
@@ -9,38 +18,6 @@ edit /etc/group
     vboxsf:x:120:harriettxing
 sudo adduser $USER vboxsf
 # need restart
-
-To install NGINX:
-        sudo apt-get update
-        sudo apt-get install nginx
-
-sudo service nginx stop
-sudo service nginx start
-sudo service nginx restart
-sudo update-rc.d nginx defaults
-
-
-gunzip --keep httpd-2.4.33.tar.gz
-tar -C apache -zxvf httpd-2.4.33.tar.gz
-
-To install apach httpd server:
-	sudo apt-get update
-	sudo apt install net-tools
-	sudo apt-get install apache2
-	sudo apache2ctl configtest
-	netstat -an | more
-	sudo /etc/init.d/apache2 stop
-	sudo /etc/init.d/apache2 start
-	sudo /etc/init.d/apache2 restart
-	sudo systemctl restart apache2
-
-sudo nano index.html
-for Ubuntu 18.04 LTS
-sudo vi /etc/apache2/sites-available/000-default.conf
-default apache document root:  /var/www/html
-
-To add apache to vboxsf:
-sudo usermod -a -G vboxsf www-data
 
 To install mysql:
 	sudo apt update
@@ -102,6 +79,45 @@ To reset root password:
 	sudo /etc/init.d/mysql stop
 	sudo /etc/init.d/mysql start
 	mysql -u root -p
+To install NGINX:
+        sudo apt-get update
+        sudo apt-get install nginx
+
+sudo service nginx stop
+sudo service nginx start
+sudo service nginx restart
+sudo update-rc.d nginx defaults
+
+
+gunzip --keep httpd-2.4.33.tar.gz
+tar -C apache -zxvf httpd-2.4.33.tar.gz
+
+To install apach httpd server:
+	sudo apt-get update
+	sudo apt install net-tools
+	sudo apt-get install apache2
+	sudo apache2ctl configtest
+	netstat -an | more
+	sudo /etc/init.d/apache2 stop
+	sudo /etc/init.d/apache2 start
+	sudo /etc/init.d/apache2 restart
+	sudo systemctl restart apache2
+
+sudo nano index.html
+for Ubuntu 18.04 LTS
+sudo vi /etc/apache2/sites-available/000-default.conf
+default apache document root:  /var/www/html
+
+To add apache to vboxsf:
+sudo usermod -a -G vboxsf www-data
+
+To setup https on apache:
+# dev.glc-md.com is the hostname
+	openssl req –new –newkey rsa:2048 –nodes –keyout dev.glc-md.com.key –out dev.glc-md.com.csr
+# VirtualBoxUbuntu is the host name
+	openssl req –new –newkey rsa:2048 –nodes –keyout VirtualBoxUbuntu.key –out VirtualBoxUbuntu.csr
+
+
 	
 To install php 7.1:
 	sudo apt-get install software-properties-common
@@ -116,7 +132,7 @@ To install php 7.1:
 		upload_max_filesize = 100M
 		max_execution_time = 360
 		date.timezone = America/Chicago
-	lookup Apache2 dir.conf
+	lookup Apache2 /etc/apache2/mods-available/dir.conf
 		<IfModule mod_dir.c>
 		     DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
 		</IfModule>
@@ -143,6 +159,11 @@ To install git:
 	git --version
 	git config --global user.name "Your Name Here"
 	git config --global user.email "youremail@address.here"
+
+To install Atom:
+	sudo add-apt-repository ppa:webupd8team/atom
+	sudo apt-get update
+	sudo apt-get install atom
 
 
 To search for a string in textfiles:
@@ -181,7 +202,9 @@ man <command>
 List all directories:
 ls -d */
 
+grep -rnw . -e 'test string'
 
+history
 
 
 

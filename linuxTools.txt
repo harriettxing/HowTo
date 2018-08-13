@@ -7,6 +7,8 @@ Ubuntu 18.04 LTS install hardware requirements:
 
 diff -r dir1 dir2 > out.txt
 
+apt list --installed
+
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 
 sudo apt install virtualbox-guest-x11
@@ -144,6 +146,10 @@ To install python:
         sudo apt-get update
         sudo apt-get install python3.6
 
+	$ sudo apt-get install python-pip python-dev build-essential 
+	$ sudo pip install --upgrade pip 
+	$ sudo pip install --upgrade virtualenv 
+	
 To install git:
 	sudo apt -y install git
 	git --version
@@ -165,6 +171,15 @@ To install Atom:
 	sudo apt-get update
 	sudo apt-get install atom
 
+To install Ansible:
+	$ sudo apt-get update
+	$ sudo apt-get install software-properties-common
+	$ sudo apt-add-repository ppa:ansible/ansible
+	$ sudo apt-get update
+	$ sudo apt-get install ansible        
+
+cd /etc/ansible
+sudo vi ansible.cfg
 
 To search for a string in textfiles:
 sudo apt-get install searchmonkey

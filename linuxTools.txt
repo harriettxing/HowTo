@@ -9,9 +9,29 @@ diff -r dir1 dir2 > out.txt
 
 apt list --installed
 
+To install ssh:
+	sudo apt update
+	sudo apt-get install openssh-server
+	service sshd start
+        ssh-keygen	
+        ssh-copy-id 127.0.0.1	
+        ssh 127.0.0.1
+        
+To install Ansible:
+	$ sudo apt-get update
+	$ sudo apt-get install software-properties-common
+	$ sudo apt-add-repository ppa:ansible/ansible
+	$ sudo apt-get update
+	$ sudo apt-get install ansible        
+
+To run a *.yml file:
+       ansible-playbook -K playbook.yml --list-hosts
+       
+cd /etc/ansible
+sudo vi ansible.cfg
+
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 
-sudo apt install virtualbox-guest-x11
 sudo apt install virtualbox-guest-x11-hwe
 VBoxClient --clipboard
 
@@ -171,30 +191,25 @@ To install Atom:
 	sudo apt-get update
 	sudo apt-get install atom
 
-To install ssh:
-	sudo apt-get install openssh-server
-	service sshd start
-        ssh-keygen	
-        ssh-copy-id 127.0.0.1	
-        ssh 127.0.0.1
+To install wordpress:
+	cd /var/www/html
+	wget https://wordpress.org/latest.tar.gz
+	tar -xzvf latest.tar.gz
+
+To install curl:
+        sudo apt install curl
         
-To install Ansible:
-	$ sudo apt-get update
-	$ sudo apt-get install software-properties-common
-	$ sudo apt-add-repository ppa:ansible/ansible
-	$ sudo apt-get update
-	$ sudo apt-get install ansible        
-
-To run a *.yml file:
-       ansible-playbook MyBox.yml --list-hosts
-       
-cd /etc/ansible
-sudo vi ansible.cfg
-
+To install Node.js:
+	curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+	sudo apt-get install -y nodejs
+	sudo apt-get install -y build-essential
+	node -v
+	sudo npm install npm --global
+	
 To search for a string in textfiles:
 sudo apt-get install searchmonkey
 
-To copy all contents of a diYjcsrectory to another:
+To copy all contents of a directory to another:
 cp -a /source/. /dest/
 
 
@@ -230,7 +245,7 @@ ls -d */
 grep -rnw . -e 'test string'
 
 history
-
+free -m
 
 
 

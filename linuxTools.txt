@@ -171,6 +171,13 @@ To install Atom:
 	sudo apt-get update
 	sudo apt-get install atom
 
+To install ssh:
+	sudo apt-get install openssh-server
+	service sshd start
+        ssh-keygen	
+        ssh-copy-id 127.0.0.1	
+        ssh 127.0.0.1
+        
 To install Ansible:
 	$ sudo apt-get update
 	$ sudo apt-get install software-properties-common
@@ -178,13 +185,16 @@ To install Ansible:
 	$ sudo apt-get update
 	$ sudo apt-get install ansible        
 
+To run a *.yml file:
+       ansible-playbook MyBox.yml --list-hosts
+       
 cd /etc/ansible
 sudo vi ansible.cfg
 
 To search for a string in textfiles:
 sudo apt-get install searchmonkey
 
-To copy all contents of a directory to another:
+To copy all contents of a diYjcsrectory to another:
 cp -a /source/. /dest/
 
 

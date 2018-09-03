@@ -257,7 +257,22 @@ To install MongoDB:
 To install NodeJS MongoDB driver:
 	sudo npm install mongodb
 
+To install Java:
+        sudo apt-get update 
+        sudo apt-get upgrade
+	sudo apt-get install default-jdk
+	sudo apt-get install software-properties-common
+	sudo add-apt-repository ppa:webupd8team/java
+	sudo apt-get update
+	sudo add-apt-repository ppa:linuxuprising/java
+	sudo apt update
+	sudo apt install oracle-java10-installer
+	sudo apt install oracle-java10-set-default
+	java -version
 
+For Oracle Java 10, see a different PPA: https://www.linuxuprising.com/2018/04/install-oracle-java-10-in-ubuntu-or.html
+ More info: https://launchpad.net/~webupd8team/+archive/ubuntu/java
+	
 To search for a string in textfiles:
 sudo apt-get install searchmonkey
 

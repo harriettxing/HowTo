@@ -5,6 +5,7 @@ popd
 cd /c/Users/MyAccount/Documents/git/repo
 git init
 git remote add origin //hostname/shared/git/repo
+git pull origin master
 
 git add -A 
 git commit
